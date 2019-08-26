@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrants List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Registrants List</h1>
+<p>
+    This page displays all the people who were registered through the Pub/Sub topic.
+    All results are retrieved from the MySQL database.
+</p>
+<table border="1">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    <tr th:each="person : ${personsList}">
+        <td>[[${person.firstName}]]</td>
+        <td>[[${person.lastName}]]</td>
+        <td>[[${person.email}]]</td>
+    </tr>
+</table>
+
+</body>
+</html>
+<!--
+At this point, you can verify that the static content is being served.
+Build and run the app using Gradle:
+$
+Click on the preview button in Cloud Shell window and verify that you see the home page being rendered. None of the functionality on the UI will work though because we are missing a web controller. This will be added in the next step.
+After previewing the application, press CTRL+C to terminate the application.
+
+Back
+-->
